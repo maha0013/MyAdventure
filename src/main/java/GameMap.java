@@ -45,9 +45,6 @@ public class GameMap {
                 return current;
             }
 
-            public void setCurrent(Room newRoom){
-            current = newRoom;
-            }
 
 
 }

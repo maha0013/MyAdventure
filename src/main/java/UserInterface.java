@@ -5,45 +5,49 @@ public class UserInterface {
     public Adventure adventure = new Adventure();
 
     public void start() {
+        adventure.setStart();
         System.out.println("Welcome to My Adventure");
-        String userInput = "";
-        while (!userInput.equals("exit")) {
-            String UserInput = input.nextLine();
+        boolean run = true;
 
-            switch (UserInput) {
+        while (run) {
+            String userInput = input.nextLine();
+
+            switch (userInput) {
                 case "north", "n", "go north" -> {
                     System.out.println("Going north");
                     adventure.goNorth();
-                    System.out.println("You are in " + adventure.getCurrent().getName() + adventure.getCurrent().getDescription());
+                    System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
                 }
 
                 case "south", "s", "go south" -> {
                     System.out.println("Going south");
                     adventure.goSouth();
-                    System.out.println("You are in " + adventure.getCurrent().getName() + adventure.getCurrent().getDescription());
+                    System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
 
                 }
 
                 case "east", "e", "go east" -> {
                     System.out.println("Going east");
                     adventure.goEast();
-                    System.out.println("You are in " + adventure.getCurrent().getName() + adventure.getCurrent().getDescription());
+                    System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
 
                 }
 
                 case "west", "w", "go west" -> {
                     System.out.println("Going west");
                     adventure.goWest();
-                    System.out.println("You are in " + adventure.getCurrent().getName() + adventure.getCurrent().getDescription());
+                    System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
 
 
                 }
                 case "look", "l", "look around" -> {
                     System.out.println("Looking around");
-                    System.out.println("You are in " + adventure.getCurrent().getName() + adventure.getCurrent().getDescription());
+                    System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
                 }
 
-                case "exit" -> System.exit(0);
+                case "exit" ->
+                    run = false;
+
 
                 case "help" -> System.out.println("""
                         Write north, south, east or west to move in this direction

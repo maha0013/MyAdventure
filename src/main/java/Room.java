@@ -10,6 +10,10 @@ public class Room {
     public Room(String name, String description){
         this.name = name;
         this.description = description;
+        this.eastRoom = null;
+        this.northRoom = null;
+        this.westRoom = null;
+        this.southRoom = null;
     }
     public String getName (){
         return name;

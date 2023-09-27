@@ -1,18 +1,24 @@
 public class Adventure {
     GameMap map = new GameMap();
+    Player player = new Player();
+
+    public void setStart() {
+        player.setCurrentRoom(map.getCurrent());
+    }
 
 
     public void goNorth() {
-        if (map.getCurrent().getNorthRoom() != null) {
-            map.setCurrent(map.getCurrent().getNorthRoom());        }
+        if (player.getCurrentRoom().getNorthRoom() != null) {
+            player.setCurrentRoom(player.getCurrentRoom().getNorthRoom());
+        }
         else {
             System.out.println("There is no door in that direction");
         }
     }
 
     public void goSouth() {
-        if (map.getCurrent().getSouthRoom() != null) {
-            map.setCurrent(map.getCurrent().getSouthRoom());
+        if (player.getCurrentRoom().getSouthRoom() != null) {
+            player.setCurrentRoom(player.getCurrentRoom().getSouthRoom());
         }
         else {
             System.out.println("There is no door in that direction");
@@ -20,16 +26,18 @@ public class Adventure {
     }
 
     public void goEast() {
-        if (map.getCurrent().getEastRoom() != null) {
-            map.setCurrent(map.getCurrent().getEastRoom());        }
+        if (player.getCurrentRoom().getEastRoom() != null) {
+            player.setCurrentRoom(player.getCurrentRoom().getEastRoom());
+        }
         else {
             System.out.println("There is no door in that direction");
         }
     }
 
     public void goWest() {
-        if (map.getCurrent().getWestRoom() != null) {
-            map.setCurrent(map.getCurrent().getWestRoom());        }
+        if (player.getCurrentRoom().getWestRoom() != null) {
+            player.setCurrentRoom(player.getCurrentRoom().getWestRoom());
+        }
         else {
             System.out.println("There is no door in that direction");
         }
@@ -37,4 +45,9 @@ public class Adventure {
     public Room getCurrent() {
         return map.getCurrent();
     }
+
+    public Room getPlayerRoom() {
+        return player.getCurrentRoom();
+    }
+
 }
