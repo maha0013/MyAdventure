@@ -17,32 +17,34 @@ public class UserInterface {
                     System.out.println("Going north");
                     adventure.goNorth();
                     System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
+                    adventure.getPlayerRoom().printitems();
                 }
 
                 case "south", "s", "go south" -> {
                     System.out.println("Going south");
                     adventure.goSouth();
                     System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
-
+                    adventure.getPlayerRoom().printitems();
                 }
 
                 case "east", "e", "go east" -> {
                     System.out.println("Going east");
                     adventure.goEast();
                     System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
-
+                    adventure.getPlayerRoom().printitems();
                 }
 
                 case "west", "w", "go west" -> {
                     System.out.println("Going west");
                     adventure.goWest();
                     System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
-
+                    adventure.getPlayerRoom().printitems();
 
                 }
                 case "look", "l", "look around" -> {
                     System.out.println("Looking around");
                     System.out.println("You are in " + adventure.getPlayerRoom().getName() + adventure.getPlayerRoom().getDescription());
+                    adventure.getPlayerRoom().printitems();
                 }
 
                 case "exit" ->
@@ -57,4 +59,5 @@ public class UserInterface {
             }
         }
     }
+
 }
